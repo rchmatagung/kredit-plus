@@ -1,0 +1,73 @@
+App:
+    Name: CMS Company Profile
+    Endpoint: /api/v1
+    Port: 3000
+    Env: Development
+    SSL: false
+    BodyLimit: 20
+    HexaSecretKey: cwrrmypposrfthak
+    ApplicationName : CMS Company Profile
+    BaseUrl : https://be-company-profile-dev-d33dgvhu5a-as.a.run.app
+    BaseUrlLocal : localhost:3000
+
+Routes:
+    Methods: GET,POST,PUT,DELETE
+    Headers: Content-Type,Authorization,Authorization-ID,Accept-Key,Timestamp,Cookie
+    Origins:
+        IsDefault: true
+        FeLocal: localhost:3000
+        FeDev: localhost:3000
+        FeProd: localhost:3000
+
+Connection:
+    DatabaseApp:
+        DriverName: postgres
+        DriverSource: user=postx-dev password=INJE2X2LIVBUKXZSGAZDECQ= sslmode=disable dbname=Company_Profile_Dev host=10.173.1.38 port=5432
+        MaxOpenConns: 5
+        MaxIdleConns: 5
+        ConnMaxLifetime: 30
+        ConnMaxIdleTime: 30
+    DatabaseMongoDB:
+        MongoURI: mongodb://crm:HRxymQz9XZTtSZUc@10.173.1.38:27017
+        DB: WABFondasi
+        PORT: 3000
+        Collection: wab_reporting
+
+Logger:
+    Logrus:
+        Level: Debug
+    ZapLogger:
+        Development: true
+        DisableCaller: false
+        DisableStacktrace: false
+        Encoding: json
+        Level: info
+
+Authorization:
+    JWT:
+        AccessTokenSecretKey: qwertysdfcomproabcdat
+        AccessTokenDuration: 1
+        RefreshTokenSecretKey: qwertysdfcomproabcdrt
+        RefreshTokenDuration: 7
+    Basic:
+        ApiKey: 830ef64d-9cff-49be-63a3-552eea41930d
+        ApiSecret: 5df47f70-87fb-4ae2-6887-1de2e22e155f
+
+CloudStorage:
+    GoogleStorage:
+        ProjectID: crm-001-cicd
+        GoogleCredentialsFile: googlestorageauth.json
+        GoogleCloudStorageBucket: crm-go
+        GoogleCloudStorageURL: https://storage.googleapis.com
+        AppName: COMPANY-PROFILE
+        DefaultMaxUploadSize: 10
+
+Grafana:
+    IsActive: true
+    LokiURL: 10.173.1.38:3100
+
+Redis:
+    Host : 10.173.1.38:6379
+    Password :
+    Db : 0
+    RedisKey: DevelopmentCompanyProfileKeyRedis

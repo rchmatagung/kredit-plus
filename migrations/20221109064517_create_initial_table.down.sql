@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS "position";
+DROP TABLE IF EXISTS "type_of_work";
+DROP TABLE IF EXISTS "location";
+DROP TABLE IF EXISTS "job";
