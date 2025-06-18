@@ -22,7 +22,7 @@ Routes:
 Connection:
     DatabaseApp:
         DriverName: postgres
-        DriverSource: user=postgres password= sslmode=disable dbname=attendance_system host=127.0.0.1 port=5432
+        DriverSource: user=postgres password=agungsmpn22 sslmode=disable dbname=kredit_plus host=localhost port=5432
         MaxOpenConns: 5
         MaxIdleConns: 5
         ConnMaxLifetime: 30
@@ -63,7 +63,7 @@ CloudStorage:
         DefaultMaxUploadSize: 10
 
 Grafana:
-    IsActive: true
+    IsActive: false
     LokiURL: 10.173.1.38:3100
 
 Redis:
